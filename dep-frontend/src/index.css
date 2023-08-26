@@ -1,0 +1,16 @@
+@media print {
+  .dwnldpdf {
+    display: none !important;
+  }
+
+}
+
+@media print {
+  body {
+    zoom: 80%;
+  }
+}
+
+input:read-only {
+  cursor: not-allowed;
+}
