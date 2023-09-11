@@ -9,16 +9,16 @@ export default function LiveApplication() {
     setLiveApplications(data);
   };
   useEffect(() => {
-    fetch("/api/listDoneLTCApplications", {
+    fetch("https://dep-backend-ce.onrender.com/api/listDoneLTCApplications", {
       method: "POST",
     })
       .then((res) => res.json())
       .then(handleList);
   }, []);
-  return(
+  return (
     <div className="bg-yellow-50 h-[88vh]">
 
-   <LiveTable data={liveApplications} />;
+      <LiveTable data={liveApplications} />;
     </div>
   )
 }

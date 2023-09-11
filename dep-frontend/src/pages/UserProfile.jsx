@@ -15,7 +15,7 @@ export default function UserProfile() {
   const [user, setUser] = useContext(LoginContext)
   const imgRef = useRef(null)
   useEffect(() => {
-    fetch('/api/getSignImage', { method: "POST" }).then(res => res.blob()).then(blob => {
+    fetch('https://dep-backend-ce.onrender.com/api/getSignImage', { method: "POST" }).then(res => res.blob()).then(blob => {
       const url = URL.createObjectURL(blob);
       imgRef.current.src = url
     })
@@ -34,7 +34,7 @@ export default function UserProfile() {
         </div>
         <div className='flex items-center mt-4'>
           <span className='font-medium mx-4'>Signature</span>
-          <img  ref={imgRef} placeholder='signature.jpg' className='w-[300px] h-[100px]'/>
+          <img ref={imgRef} placeholder='signature.jpg' className='w-[300px] h-[100px]' />
         </div>
       </Form>
     </div>

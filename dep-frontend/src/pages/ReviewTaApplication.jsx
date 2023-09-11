@@ -35,24 +35,24 @@ export default function ReviewTaApplication() {
 
     setJourney(json.journeyDetails);
     console.log("receipt Id")
-    for(let receiptId of json.receipts){
+    for (let receiptId of json.receipts) {
       console.log(receiptId)
-      addFile(receiptId) 
+      addFile(receiptId)
     }
   };
 
   const addFile = (id) => {
     const formdata = new FormData()
     formdata.append('fileId', id)
-    fetch('/api/getReceipt', {
+    fetch('https://dep-backend-ce.onrender.com/api/getReceipt', {
       method: "POST",
       body: formdata
     }).then(handleBlob)
   }
 
-    const handleBlob = async (res) => {
+  const handleBlob = async (res) => {
     console.log(res)
-    if(res.status == 200) {
+    if (res.status == 200) {
       const blob = await res.blob()
       console.log(blob)
       const url = window.URL.createObjectURL(blob)
@@ -68,7 +68,7 @@ export default function ReviewTaApplication() {
   }
 
   useEffect(() => {
-    fetch("/api/getTAInfo", {
+    fetch("https://dep-backend-ce.onrender.com/api/getTAInfo", {
       method: "POST",
       body: JSON.stringify({ taId: id }),
       headers: {
@@ -92,7 +92,7 @@ export default function ReviewTaApplication() {
               <form method="POST" action="/api/createNewApplication">
   
               </form>
-              fetch('/api/createNewApplication', {
+              fetch('https://dep-backend-ce.onrender.com/api/createNewApplication', {
                 method: "POST",
                 data: JSON.stringify(people)
               }).then(res => res.json()).then(json_data => handle(json_date))
@@ -194,8 +194,8 @@ export default function ReviewTaApplication() {
               value={
                 taData.ltcInfo.advanceDrawnDate
                   ? new Date(taData.ltcInfo.advanceDrawnDate)
-                      .toISOString()
-                      .substring(0, 10)
+                    .toISOString()
+                    .substring(0, 10)
                   : ""
               }
             />
@@ -335,7 +335,7 @@ export default function ReviewTaApplication() {
 
           {/* <Input type="submit" /> */}
         </InputGroup>
-    <div >
+        <div >
           Proofs:
           <ul ref={receiptRef}>
           </ul>

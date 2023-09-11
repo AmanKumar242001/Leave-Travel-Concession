@@ -2,12 +2,12 @@ import React from 'react'
 import CommentBox from "../components/CommentBox.jsx"
 import Modal from '../components/Modal.jsx'
 import ReviewApplication from './ReviewApplication.jsx'
-import { useNavigate,useParams} from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { toast } from "react-hot-toast";
 
 export default function RegistrarSubmission() {
 
-  const { id } =useParams();
+  const { id } = useParams();
   const navigate = useNavigate();
 
 
@@ -29,12 +29,12 @@ export default function RegistrarSubmission() {
     registrarData["formId"] = id;
 
 
-    fetch("/api/submitRegistrarData", {
+    fetch("https://dep-backend-ce.onrender.com/api/submitRegistrarData", {
       method: "POST",
       body: JSON.stringify(registrarData),
-      headers : {
+      headers: {
         'Content-Type': 'application/json'
-     },
+      },
     }).then(handleRegistrarResponse);
 
   };
@@ -48,12 +48,12 @@ export default function RegistrarSubmission() {
     registrarData["formId"] = id;
 
 
-    fetch("/api/submitRegistrarData", {
+    fetch("https://dep-backend-ce.onrender.com/api/submitRegistrarData", {
       method: "POST",
       body: JSON.stringify(registrarData),
-      headers : {
+      headers: {
         'Content-Type': 'application/json'
-     },
+      },
     }).then(handleRegistrarResponse);
 
   };
@@ -61,11 +61,11 @@ export default function RegistrarSubmission() {
   return (
     <div className='max-w-screen-xl mx-auto mt-4'>
 
-    <Modal>
+      <Modal>
         <ReviewApplication />
       </Modal>
-      <CommentBox onAccept={registrarOnAccept} onReview={registrarOnReview}  />
+      <CommentBox onAccept={registrarOnAccept} onReview={registrarOnReview} />
     </div>
-    
+
   )
 }

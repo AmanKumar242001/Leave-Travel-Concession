@@ -10,16 +10,16 @@ function App() {
   const [userInfo, setUserInfo] = useState(null)
 
   const handleLogin = async (res) => {
-    if(res.status == 200) {
+    if (res.status == 200) {
       const data = await res.json()
       setUserInfo(data)
     }
   }
 
-  useEffect(()=>{
-    fetch('/api/getUserInfo').then(handleLogin)
+  useEffect(() => {
+    fetch('https://dep-backend-ce.onrender.com/api/getUserInfo').then(handleLogin)
   }, [])
-  
+
   return (
     <BrowserRouter>
       <LoginContext.Provider value={[userInfo, setUserInfo]}>

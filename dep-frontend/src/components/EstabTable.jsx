@@ -10,7 +10,7 @@ export default function EstabTable() {
   const [ltcDataOld, setLtcDataOld] = useState({});
   const { id } = useParams();
   useEffect(() => {
-    fetch("/api/getLTCInfo", {
+    fetch("https://dep-backend-ce.onrender.com/api/getLTCInfo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -19,9 +19,9 @@ export default function EstabTable() {
     })
       .then((res) => res.json())
       .then(setLtcData);
-  
 
-    fetch("/api/getOldLTCInfo", {
+
+    fetch("https://dep-backend-ce.onrender.com/api/getOldLTCInfo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export default function EstabTable() {
           type="date"
           value={new Date(ltcData.user.dateOfJoining).toISOString().substring(0, 10)}
         />
-        <Input label={"Block Year"} name="blockYear" type="text" value={new Date().getFullYear()}/>
+        <Input label={"Block Year"} name="blockYear" type="text" value={new Date().getFullYear()} />
       </div>
 
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg">

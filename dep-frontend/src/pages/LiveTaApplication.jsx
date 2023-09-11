@@ -9,17 +9,17 @@ export default function LiveTaApplication() {
     setLiveTaApplications(data);
   };
   useEffect(() => {
-    fetch("/api/listLiveTAApplications", {
+    fetch("https://dep-backend-ce.onrender.com/api/listLiveTAApplications", {
       method: "POST",
     })
       .then((res) => res.json())
       .then(handleTaList);
-  },[]);
+  }, []);
 
   return (
     <div className="bg-yellow-50 h-[88vh]">
 
-    <LiveTaTable data={liveTaApplications} />;
+      <LiveTaTable data={liveTaApplications} />;
     </div>
   )
 }

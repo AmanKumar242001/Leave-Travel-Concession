@@ -20,16 +20,16 @@ export default function ReviewApplication() {
     setLtcData(json)
     setPeople(json.peopleInvolved)
     console.log("receipt Id")
-    for(let receiptId of json.receipts){
+    for (let receiptId of json.receipts) {
       console.log(receiptId)
-      addFile(receiptId) 
+      addFile(receiptId)
     }
   }
 
   const addFile = (id) => {
     const formdata = new FormData()
     formdata.append('fileId', id)
-    fetch('/api/getReceipt', {
+    fetch('https://dep-backend-ce.onrender.com/api/getReceipt', {
       method: "POST",
       body: formdata
     }).then(handleBlob)
@@ -38,7 +38,7 @@ export default function ReviewApplication() {
   // console.log(ltcData)
   const handleBlob = async (res) => {
     console.log(res)
-    if(res.status == 200) {
+    if (res.status == 200) {
       const blob = await res.blob()
       console.log(blob)
       const url = window.URL.createObjectURL(blob)
@@ -55,7 +55,7 @@ export default function ReviewApplication() {
 
 
   useEffect(() => {
-    fetch("/api/getLTCInfo", {
+    fetch("https://dep-backend-ce.onrender.com/api/getLTCInfo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -76,7 +76,7 @@ export default function ReviewApplication() {
               label={"Name"}
               name="name"
               type="text"
-              value={ltcData.user.firstName +" "+ ltcData.user.lastName}
+              value={ltcData.user.firstName + " " + ltcData.user.lastName}
             />
             <Input
               readOnly
@@ -223,7 +223,7 @@ export default function ReviewApplication() {
               label={""}
               name="spouseEntitled"
               type="checkbox"
-              checked={ltcData.spouseEntitled??false}
+              checked={ltcData.spouseEntitled ?? false}
             />
             <span className="font-semibold text-gray-900"> Advance Required</span>
             <Input className="mt-3"
@@ -267,7 +267,7 @@ export default function ReviewApplication() {
 
           </ul>
         </div>
-      </Form> 
+      </Form>
       {/* <EstabSubmission /> */}
       {/* <AccountsSubmission /> */}
       {/* <CommentBox /> */}

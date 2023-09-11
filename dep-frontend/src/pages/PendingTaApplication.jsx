@@ -7,7 +7,7 @@ export default function PendingTaApplication() {
   const [pendingTaList, setPendingTaList] = useState([]);
 
   const getTaData = () => {
-    fetch("/api/listPendingTAApplication", { method: "POST" })
+    fetch("https://dep-backend-ce.onrender.com/api/listPendingTAApplication", { method: "POST" })
       .then((res) => res.json())
       .then((data) => setPendingTaList(data));
   };
@@ -16,10 +16,10 @@ export default function PendingTaApplication() {
     getTaData();
   }, []);
 
-  return(
+  return (
     <div className="bg-yellow-50 h-[88vh]">
 
-   <PendingTaTable data={pendingTaList} />;
+      <PendingTaTable data={pendingTaList} />;
     </div>
   )
 }

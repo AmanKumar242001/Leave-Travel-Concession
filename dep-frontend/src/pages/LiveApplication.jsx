@@ -9,7 +9,7 @@ export default function LiveApplication() {
     setLiveApplications(data);
   };
   useEffect(() => {
-    fetch("/api/listLiveLTCApplications", {
+    fetch("https://dep-backend-ce.onrender.com/api/listLiveLTCApplications", {
       method: "POST",
     })
       .then((res) => res.json())
@@ -18,7 +18,7 @@ export default function LiveApplication() {
   return (
     <div className="bg-yellow-50 h-[88vh] overflow-y-hidden">
 
-    <LiveTable data={liveApplications} />;
+      <LiveTable data={liveApplications} />;
     </div>
   )
 }

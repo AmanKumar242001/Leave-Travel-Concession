@@ -7,7 +7,7 @@ export default function PendingApplication() {
   const [pendingList, setPendingList] = useState([]);
 
   const getData = () => {
-    fetch("/api/listPendingLTCApplication", { method: "POST" })
+    fetch("https://dep-backend-ce.onrender.com/api/listPendingLTCApplication", { method: "POST" })
       .then((res) => res.json())
       .then((data) => setPendingList(data));
   };
@@ -20,7 +20,7 @@ export default function PendingApplication() {
 
   return (
     <div className="">
-      <PendingTable data={pendingList}  />
+      <PendingTable data={pendingList} />
     </div>
   );
 }

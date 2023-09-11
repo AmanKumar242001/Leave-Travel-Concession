@@ -52,7 +52,7 @@ export default function Navbar() {
       setUser(null);
       navigate("/");
     };
-    fetch("/api/logout", {
+    fetch("https://dep-backend-ce.onrender.com/api/logout", {
       method: "POST",
     }).then((res) =>
       res.status === 200 ? logOUT_() : toast("Failed to Logout")
@@ -61,7 +61,7 @@ export default function Navbar() {
 
   const [avatar, setAvatar] = useState(false)
   const [openNotification, setNotification] = useState(false);
-  const handleClick = () => setAvatar(!avatar) 
+  const handleClick = () => setAvatar(!avatar)
 
   return (
     <>
@@ -83,7 +83,7 @@ export default function Navbar() {
           <div className="flex items-center lg:order-2">
 
             <div className="mr-6 pt-1" >
-            <NotificationBar open={openNotification} setOpen={setNotification} />
+              <NotificationBar open={openNotification} setOpen={setNotification} />
             </div>
 
             <div onClick={handleClick} className="flex mr-3 bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300">

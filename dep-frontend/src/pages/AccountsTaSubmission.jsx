@@ -51,7 +51,7 @@ export default function AccountsTaSubmission() {
     accountsTaData["formId"] = id;
     accountsTaData["comment"] = accountsTaComment.value;
 
-    fetch("/api/submitTAAccountsData", {
+    fetch("https://dep-backend-ce.onrender.com/api/submitTAAccountsData", {
       method: "POST",
       body: JSON.stringify(accountsTaData),
       headers: {
@@ -92,7 +92,7 @@ export default function AccountsTaSubmission() {
     accountsTaData["formId"] = id;
     accountsTaData["comment"] = accountsTaComment.value;
 
-    fetch("/api/submitTAAccountsData", {
+    fetch("https://dep-backend-ce.onrender.com/api/submitTAAccountsData", {
       method: "POST",
       body: JSON.stringify(accountsTaData),
       headers: {

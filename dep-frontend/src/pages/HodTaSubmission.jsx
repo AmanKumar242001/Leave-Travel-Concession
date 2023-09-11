@@ -1,6 +1,6 @@
 import React from 'react'
 import EstabTaTable from '../components/EstabTaTable'
-import ReviewTaApplication from './ReviewTaApplication' 
+import ReviewTaApplication from './ReviewTaApplication'
 import CommentBox from '../components/CommentBox'
 import Modal from "../components/Modal";
 import { useNavigate, useParams } from "react-router-dom";
@@ -29,12 +29,12 @@ export default function HodTaSubmission() {
     hodTaData["formId"] = id;
 
 
-    fetch("/api/submitTAHodData", {
+    fetch("https://dep-backend-ce.onrender.com/api/submitTAHodData", {
       method: "POST",
       body: JSON.stringify(hodTaData),
-      headers : {
+      headers: {
         'Content-Type': 'application/json'
-     },
+      },
     }).then(handleHodTaResponse);
 
   };
@@ -48,12 +48,12 @@ export default function HodTaSubmission() {
     hodTaData["formId"] = id;
 
 
-    fetch("/api/submitTAHodData", {
+    fetch("https://dep-backend-ce.onrender.com/api/submitTAHodData", {
       method: "POST",
       body: JSON.stringify(hodTaData),
-      headers : {
+      headers: {
         'Content-Type': 'application/json'
-     },
+      },
     }).then(handleHodTaResponse);
 
   };
@@ -61,13 +61,13 @@ export default function HodTaSubmission() {
   return (
     <div >
 
-    <div className='max-w-screen-xl mx-auto pt-4'>
-      <Modal>
-        <ReviewTaApplication />
-      </Modal>
-      <ListComment />
-      <CommentBox onAccept={hodOnTaAccept} onReview={hodOnTaReview}  />
-    </div>
+      <div className='max-w-screen-xl mx-auto pt-4'>
+        <Modal>
+          <ReviewTaApplication />
+        </Modal>
+        <ListComment />
+        <CommentBox onAccept={hodOnTaAccept} onReview={hodOnTaReview} />
+      </div>
     </div>
   )
 }

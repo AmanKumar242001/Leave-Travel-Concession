@@ -2,12 +2,12 @@ import React from "react";
 import CommentBox from "../components/CommentBox.jsx";
 import Modal from "../components/Modal.jsx";
 import ReviewTaApplication from "./ReviewTaApplication.jsx";
-import { useNavigate,useParams} from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { toast } from "react-hot-toast";
 
 export default function AuditTaSubmission() {
 
-  const { id } =useParams();
+  const { id } = useParams();
   const navigate = useNavigate();
 
 
@@ -29,12 +29,12 @@ export default function AuditTaSubmission() {
     auditTaData["formId"] = id;
 
 
-    fetch("/api/submitTAAuditData", {
+    fetch("https://dep-backend-ce.onrender.com/api/submitTAAuditData", {
       method: "POST",
       body: JSON.stringify(auditTaData),
-      headers : {
+      headers: {
         'Content-Type': 'application/json'
-     },
+      },
     }).then(handleAuditTaResponse);
 
   };
@@ -48,12 +48,12 @@ export default function AuditTaSubmission() {
     auditTaData["formId"] = id;
 
 
-    fetch("/api/submitTAAuditData", {
+    fetch("https://dep-backend-ce.onrender.com/api/submitTAAuditData", {
       method: "POST",
       body: JSON.stringify(auditTaData),
-      headers : {
+      headers: {
         'Content-Type': 'application/json'
-     },
+      },
     }).then(handleAuditTaResponse);
 
   };
@@ -64,7 +64,7 @@ export default function AuditTaSubmission() {
       <Modal>
         <ReviewTaApplication />
       </Modal>
-      <CommentBox  onAccept={auditOnTaAccept} onReview={auditOnTaReview} />
+      <CommentBox onAccept={auditOnTaAccept} onReview={auditOnTaReview} />
     </div>
   );
 }

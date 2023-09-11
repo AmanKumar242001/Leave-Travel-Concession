@@ -32,10 +32,10 @@ export default function EstabTaSubmission() {
 
 
 
-  
-    fetch("/api/submitTAEstabData",{
-      method:"POST",
-      body:JSON.stringify(estabTaData),
+
+    fetch("https://dep-backend-ce.onrender.com/api/submitTAEstabData", {
+      method: "POST",
+      body: JSON.stringify(estabTaData),
       headers: {
         "Content-Type": "application/json",
       },
@@ -54,13 +54,13 @@ export default function EstabTaSubmission() {
 
 
 
-  fetch("/api/submitTAEstabData",{
-    method:"POST",
-    body:JSON.stringify(estabTaData),
-    headers : {
-      'Content-Type': 'application/json'
-   },
-  }).then(handleEstabTaResponse);
+    fetch("https://dep-backend-ce.onrender.com/api/submitTAEstabData", {
+      method: "POST",
+      body: JSON.stringify(estabTaData),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    }).then(handleEstabTaResponse);
 
   }
 

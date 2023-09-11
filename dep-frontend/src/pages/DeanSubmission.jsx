@@ -2,12 +2,12 @@ import React from 'react'
 import CommentBox from "../components/CommentBox.jsx"
 import Modal from '../components/Modal.jsx'
 import ReviewApplication from './ReviewApplication.jsx'
-import { useNavigate,useParams} from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { toast } from "react-hot-toast";
 
 export default function DeanSubmission() {
 
-  const { id } =useParams();
+  const { id } = useParams();
   const navigate = useNavigate();
 
 
@@ -29,12 +29,12 @@ export default function DeanSubmission() {
     deanData["formId"] = id;
 
 
-    fetch("/api/submitDeanData", {
+    fetch("https://dep-backend-ce.onrender.com/api/submitDeanData", {
       method: "POST",
       body: JSON.stringify(deanData),
-      headers : {
+      headers: {
         'Content-Type': 'application/json'
-     },
+      },
     }).then(handleDeanResponse);
 
   };
@@ -48,23 +48,23 @@ export default function DeanSubmission() {
     deanData["formId"] = id;
 
 
-    fetch("/api/submitDeanData", {
+    fetch("https://dep-backend-ce.onrender.com/api/submitDeanData", {
       method: "POST",
       body: JSON.stringify(deanData),
-      headers : {
+      headers: {
         'Content-Type': 'application/json'
-     },
+      },
     }).then(handleDeanResponse);
 
   };
 
   return (
     <div className='max-w-screen-xl mx-auto mt-4'>
-    <Modal>
+      <Modal>
         <ReviewApplication />
       </Modal>
-      <CommentBox onAccept={deanOnAccept} onReview={deanOnReview}  />
+      <CommentBox onAccept={deanOnAccept} onReview={deanOnReview} />
     </div>
-    
+
   )
 }

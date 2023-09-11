@@ -2,12 +2,12 @@ import React from "react";
 import CommentBox from "../components/CommentBox.jsx";
 import Modal from "../components/Modal.jsx";
 import ReviewTaApplication from "./ReviewTaApplication.jsx";
-import { useNavigate,useParams} from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { toast } from "react-hot-toast";
 
 export default function RegistrarTaSubmission() {
 
-  const { id } =useParams();
+  const { id } = useParams();
   const navigate = useNavigate();
 
 
@@ -29,12 +29,12 @@ export default function RegistrarTaSubmission() {
     registrarTaData["formId"] = id;
 
 
-    fetch("/api/submitTARegistrarData", {
+    fetch("https://dep-backend-ce.onrender.com/api/submitTARegistrarData", {
       method: "POST",
       body: JSON.stringify(registrarTaData),
-      headers : {
+      headers: {
         'Content-Type': 'application/json'
-     },
+      },
     }).then(handleRegistrarTaResponse);
 
   };
@@ -48,12 +48,12 @@ export default function RegistrarTaSubmission() {
     registrarTaData["formId"] = id;
 
 
-    fetch("/api/submitTARegistrarData", {
+    fetch("https://dep-backend-ce.onrender.com/api/submitTARegistrarData", {
       method: "POST",
       body: JSON.stringify(registrarTaData),
-      headers : {
+      headers: {
         'Content-Type': 'application/json'
-     },
+      },
     }).then(handleRegistrarTaResponse);
 
   };
@@ -63,7 +63,7 @@ export default function RegistrarTaSubmission() {
       <Modal>
         <ReviewTaApplication />
       </Modal>
-      <CommentBox onAccept={registrarOnTaAccept} onReview={registrarOnTaReview}  />
+      <CommentBox onAccept={registrarOnTaAccept} onReview={registrarOnTaReview} />
     </div>
   );
 }

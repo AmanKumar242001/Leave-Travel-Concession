@@ -29,7 +29,7 @@ export default function NewTaApplication() {
   };
 
   useEffect(() => {
-    fetch("/api/getLTCInfo", {
+    fetch("https://dep-backend-ce.onrender.com/api/getLTCInfo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -85,13 +85,13 @@ export default function NewTaApplication() {
       fd.append("file", image);
     }
 
-    fetch("/api/createNewTAApplication", {
+    fetch("https://dep-backend-ce.onrender.com/api/createNewTAApplication", {
       method: "POST",
       body: fd,
     }).then(handleTaRes);
   };
   let advanceTotal = 0;
-  if(ltcInfo.advanceRequired) advanceTotal = 0.9 * ltcInfo.expectedJourneyDetails.reduce((sum, item) => sum + item.singleFare * item.noOfFares, 0)
+  if (ltcInfo.advanceRequired) advanceTotal = 0.9 * ltcInfo.expectedJourneyDetails.reduce((sum, item) => sum + item.singleFare * item.noOfFares, 0)
   return (
     <div className="bg-yellow-50">
       <div className="max-w-screen-xl mx-auto">

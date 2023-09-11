@@ -2,11 +2,11 @@ import React from 'react'
 import CommentBox from "../components/CommentBox.jsx"
 import Modal from '../components/Modal.jsx'
 import ReviewApplication from './ReviewApplication.jsx'
-import { useNavigate,useParams} from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { toast } from "react-hot-toast";
 
 export default function AuditSubmission() {
-  const { id } =useParams();
+  const { id } = useParams();
   const navigate = useNavigate();
 
   const handleAuditResponse = (res) => {
@@ -27,12 +27,12 @@ export default function AuditSubmission() {
     auditData["formId"] = id;
 
 
-    fetch("/api/submitAuditData", {
+    fetch("https://dep-backend-ce.onrender.com/api/submitAuditData", {
       method: "POST",
       body: JSON.stringify(auditData),
-      headers : {
+      headers: {
         'Content-Type': 'application/json'
-     },
+      },
     }).then(handleAuditResponse);
 
   };
@@ -46,12 +46,12 @@ export default function AuditSubmission() {
     auditData["formId"] = id;
 
 
-    fetch("/api/submitAuditData", {
+    fetch("https://dep-backend-ce.onrender.com/api/submitAuditData", {
       method: "POST",
       body: JSON.stringify(auditData),
-      headers : {
+      headers: {
         'Content-Type': 'application/json'
-     },
+      },
     }).then(handleAuditResponse);
 
   };
@@ -60,14 +60,14 @@ export default function AuditSubmission() {
   return (
     <>
       <div className="max-w-screen-xl mx-auto">
-      <br></br>
-    <Modal>
-        <ReviewApplication />
-      </Modal>
-      <br></br>
-      <CommentBox onAccept={auditOnAccept} onReview={auditOnReview} />
+        <br></br>
+        <Modal>
+          <ReviewApplication />
+        </Modal>
+        <br></br>
+        <CommentBox onAccept={auditOnAccept} onReview={auditOnReview} />
       </div>
     </>
-    
+
   )
 }

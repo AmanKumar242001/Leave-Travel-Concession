@@ -7,13 +7,13 @@ import { ltcInfo } from "../dummy/ltcInfos";
 import { useParams } from "react-router";
 
 export default function EstabTaTable() {
-  const [formDetail,setFormDetail]=useState(ltcInfo[0])
+  const [formDetail, setFormDetail] = useState(ltcInfo[0])
   const ltcData = ltcInfo[0];
   const ltcDataOld = ltcInfoOld[0];
   const { id } = useParams();
 
   useEffect(() => {
-    fetch("/api/getLTCInfo", {
+    fetch("https://dep-backend-ce.onrender.com/api/getLTCInfo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,14 +22,14 @@ export default function EstabTaTable() {
     })
       .then((res) => res.json())
       .then(setFormDetail);
-  },[])
+  }, [])
 
   return (
     <>
       <ul>
         <li className="py-8 flex space-x-1 items-center">
           <p className="whitespace-nowrap">Certified that Dr./Sri/Smt./Kum</p>
-          
+
           <span contentEditable className="whitespace-nowrap font-medium">{`${formDetail.user.firstName}  ${formDetail.user.lastName}`}</span>
           <p className="whitespace-nowrap">
             has rendered continuous service for one year or more on the date of
