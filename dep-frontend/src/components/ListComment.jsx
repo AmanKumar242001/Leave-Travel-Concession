@@ -9,9 +9,9 @@ export default function ListComment() {
 
   useEffect(() => {
     const commentEndpoint = location.pathname.includes("Ta")
-      ? "/api/getTAComments"
-      : "/api/getComments";
-    fetch('https://dep-backend-ce.onrender.comommentEndpoint', {
+      ? "/getTAComments"
+      : "/getComments";
+    fetch(`https://dep-backend-ce.onrender.com${commentEndpoint}`, {
       method: "POST",
       body: JSON.stringify({ id: id }),
       headers: {
