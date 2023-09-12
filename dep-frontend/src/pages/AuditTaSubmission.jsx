@@ -29,7 +29,7 @@ export default function AuditTaSubmission() {
     auditTaData["formId"] = id;
 
 
-    fetch("https://dep-backend-ce.onrender.com/api/submitTAAuditData", {
+    fetch("https://dep-backend-ce.onrender.com/submitTAAuditData", {
       method: "POST",
       body: JSON.stringify(auditTaData),
       headers: {
@@ -48,7 +48,7 @@ export default function AuditTaSubmission() {
     auditTaData["formId"] = id;
 
 
-    fetch("https://dep-backend-ce.onrender.com/api/submitTAAuditData", {
+    fetch("https://dep-backend-ce.onrender.com/submitTAAuditData", {
       method: "POST",
       body: JSON.stringify(auditTaData),
       headers: {

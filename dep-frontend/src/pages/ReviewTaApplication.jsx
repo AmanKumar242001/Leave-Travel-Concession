@@ -44,7 +44,7 @@ export default function ReviewTaApplication() {
   const addFile = (id) => {
     const formdata = new FormData()
     formdata.append('fileId', id)
-    fetch('https://dep-backend-ce.onrender.com/api/getReceipt', {
+    fetch('https://dep-backend-ce.onrender.com/getReceipt', {
       method: "POST",
       body: formdata
     }).then(handleBlob)
@@ -68,7 +68,7 @@ export default function ReviewTaApplication() {
   }
 
   useEffect(() => {
-    fetch("https://dep-backend-ce.onrender.com/api/getTAInfo", {
+    fetch("https://dep-backend-ce.onrender.com/getTAInfo", {
       method: "POST",
       body: JSON.stringify({ taId: id }),
       headers: {

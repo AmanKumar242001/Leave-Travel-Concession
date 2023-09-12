@@ -29,7 +29,7 @@ export default function HodTaSubmission() {
     hodTaData["formId"] = id;
 
 
-    fetch("https://dep-backend-ce.onrender.com/api/submitTAHodData", {
+    fetch("https://dep-backend-ce.onrender.com/submitTAHodData", {
       method: "POST",
       body: JSON.stringify(hodTaData),
       headers: {
@@ -48,7 +48,7 @@ export default function HodTaSubmission() {
     hodTaData["formId"] = id;
 
 
-    fetch("https://dep-backend-ce.onrender.com/api/submitTAHodData", {
+    fetch("https://dep-backend-ce.onrender.com/submitTAHodData", {
       method: "POST",
       body: JSON.stringify(hodTaData),
       headers: {

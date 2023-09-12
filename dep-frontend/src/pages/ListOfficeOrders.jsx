@@ -15,13 +15,13 @@ export default function ListOfficeOrders() {
   };
 
   useEffect(() => {
-    fetch("https://dep-backend-ce.onrender.com/api/listLTCOfficeOrders", {
+    fetch("https://dep-backend-ce.onrender.com/listLTCOfficeOrders", {
       method: "POST",
     })
       .then((res) => res.json())
       .then(handleLTCList);
 
-    fetch("https://dep-backend-ce.onrender.com/api/listTAOfficeOrders", {
+    fetch("https://dep-backend-ce.onrender.com/listTAOfficeOrders", {
       method: "POST",
     })
       .then((res) => res.json())

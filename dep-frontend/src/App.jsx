@@ -17,7 +17,7 @@ function App() {
   }
 
   useEffect(() => {
-    fetch('https://dep-backend-ce.onrender.com/api/getUserInfo').then(handleLogin)
+    fetch('https://dep-backend-ce.onrender.com/getUserInfo').then(handleLogin)
   }, [])
 
   return (

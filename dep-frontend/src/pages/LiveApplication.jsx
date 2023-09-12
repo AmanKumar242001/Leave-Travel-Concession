@@ -9,7 +9,7 @@ export default function LiveApplication() {
     setLiveApplications(data);
   };
   useEffect(() => {
-    fetch("https://dep-backend-ce.onrender.com/api/listLiveLTCApplications", {
+    fetch("https://dep-backend-ce.onrender.com/listLiveLTCApplications", {
       method: "POST",
     })
       .then((res) => res.json())

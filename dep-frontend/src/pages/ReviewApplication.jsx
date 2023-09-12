@@ -29,7 +29,7 @@ export default function ReviewApplication() {
   const addFile = (id) => {
     const formdata = new FormData()
     formdata.append('fileId', id)
-    fetch('https://dep-backend-ce.onrender.com/api/getReceipt', {
+    fetch('https://dep-backend-ce.onrender.com/getReceipt', {
       method: "POST",
       body: formdata
     }).then(handleBlob)
@@ -55,7 +55,7 @@ export default function ReviewApplication() {
 
 
   useEffect(() => {
-    fetch("https://dep-backend-ce.onrender.com/api/getLTCInfo", {
+    fetch("https://dep-backend-ce.onrender.com/getLTCInfo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

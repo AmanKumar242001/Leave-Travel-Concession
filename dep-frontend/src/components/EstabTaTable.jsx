@@ -13,7 +13,7 @@ export default function EstabTaTable() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch("https://dep-backend-ce.onrender.com/api/getLTCInfo", {
+    fetch("https://dep-backend-ce.onrender.com/getLTCInfo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

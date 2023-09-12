@@ -29,7 +29,7 @@ export default function RegistrarSubmission() {
     registrarData["formId"] = id;
 
 
-    fetch("https://dep-backend-ce.onrender.com/api/submitRegistrarData", {
+    fetch("https://dep-backend-ce.onrender.com/submitRegistrarData", {
       method: "POST",
       body: JSON.stringify(registrarData),
       headers: {
@@ -48,7 +48,7 @@ export default function RegistrarSubmission() {
     registrarData["formId"] = id;
 
 
-    fetch("https://dep-backend-ce.onrender.com/api/submitRegistrarData", {
+    fetch("https://dep-backend-ce.onrender.com/submitRegistrarData", {
       method: "POST",
       body: JSON.stringify(registrarData),
       headers: {

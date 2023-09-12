@@ -29,7 +29,7 @@ export default function DeanSubmission() {
     deanData["formId"] = id;
 
 
-    fetch("https://dep-backend-ce.onrender.com/api/submitDeanData", {
+    fetch("https://dep-backend-ce.onrender.com/submitDeanData", {
       method: "POST",
       body: JSON.stringify(deanData),
       headers: {
@@ -48,7 +48,7 @@ export default function DeanSubmission() {
     deanData["formId"] = id;
 
 
-    fetch("https://dep-backend-ce.onrender.com/api/submitDeanData", {
+    fetch("https://dep-backend-ce.onrender.com/submitDeanData", {
       method: "POST",
       body: JSON.stringify(deanData),
       headers: {

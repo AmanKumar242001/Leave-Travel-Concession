@@ -52,7 +52,7 @@ export default function Navbar() {
       setUser(null);
       navigate("/");
     };
-    fetch("https://dep-backend-ce.onrender.com/api/logout", {
+    fetch("https://dep-backend-ce.onrender.com/logout", {
       method: "POST",
     }).then((res) =>
       res.status === 200 ? logOUT_() : toast("Failed to Logout")

@@ -149,7 +149,7 @@ export default function NewApplication() {
     for (let image of imageRef.current.files) {
       fd.append("file", image);
     }
-    fetch("https://dep-backend-ce.onrender.com/api/createNewLTCApplications", {
+    fetch("https://dep-backend-ce.onrender.com/createNewLTCApplications", {
       method: "POST",
       body: fd,
     }).then(handleRes);
