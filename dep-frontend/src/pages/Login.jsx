@@ -16,7 +16,7 @@ export default function Login() {
     var formdata = new FormData();
     formdata.append("emailId", email);
     let res;
-    res = await fetch("https://dep-backend-ce.onrender.com/login", {
+    res = await fetch("https://depcse.pythonanywhere.com//login", {
       method: "POST",
       body: formdata,
     })
@@ -36,7 +36,7 @@ export default function Login() {
     const otp = form.elements[0].value;
     var formdata = new FormData();
     formdata.append("otp", otp);
-    let res = await fetch("https://dep-backend-ce.onrender.com/acceptOTP", {
+    let res = await fetch("https://depcse.pythonanywhere.com//acceptOTP", {
       method: "POST",
       body: formdata,
     })

@@ -13,7 +13,7 @@ export default function AccountsTaTable() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch("https://dep-backend-ce.onrender.com/getTAInfo", {
+    fetch("https://depcse.pythonanywhere.com//getTAInfo", {
       method: "POST",
       body: JSON.stringify({ taId: id }),
       headers: {

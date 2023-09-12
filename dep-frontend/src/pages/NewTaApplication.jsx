@@ -29,7 +29,7 @@ export default function NewTaApplication() {
   };
 
   useEffect(() => {
-    fetch("https://dep-backend-ce.onrender.com/getLTCInfo", {
+    fetch("https://depcse.pythonanywhere.com//getLTCInfo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -85,7 +85,7 @@ export default function NewTaApplication() {
       fd.append("file", image);
     }
 
-    fetch("https://dep-backend-ce.onrender.com/createNewTAApplication", {
+    fetch("https://depcse.pythonanywhere.com//createNewTAApplication", {
       method: "POST",
       body: fd,
     }).then(handleTaRes);

@@ -33,7 +33,7 @@ export default function EstabTaSubmission() {
 
 
 
-    fetch("https://dep-backend-ce.onrender.com/submitTAEstabData", {
+    fetch("https://depcse.pythonanywhere.com//submitTAEstabData", {
       method: "POST",
       body: JSON.stringify(estabTaData),
       headers: {
@@ -54,7 +54,7 @@ export default function EstabTaSubmission() {
 
 
 
-    fetch("https://dep-backend-ce.onrender.com/submitTAEstabData", {
+    fetch("https://depcse.pythonanywhere.com//submitTAEstabData", {
       method: "POST",
       body: JSON.stringify(estabTaData),
       headers: {

@@ -29,7 +29,7 @@ export default function DeanTaSubmission() {
     deanTaData["formId"] = id;
 
 
-    fetch("https://dep-backend-ce.onrender.com/submitTADeanData", {
+    fetch("https://depcse.pythonanywhere.com//submitTADeanData", {
       method: "POST",
       body: JSON.stringify(deanTaData),
       headers: {
@@ -48,7 +48,7 @@ export default function DeanTaSubmission() {
     deanTaData["formId"] = id;
 
 
-    fetch("https://dep-backend-ce.onrender.com/submitTADeanData", {
+    fetch("https://depcse.pythonanywhere.com//submitTADeanData", {
       method: "POST",
       body: JSON.stringify(deanTaData),
       headers: {

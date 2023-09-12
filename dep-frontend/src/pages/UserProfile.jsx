@@ -15,7 +15,7 @@ export default function UserProfile() {
   const [user, setUser] = useContext(LoginContext)
   const imgRef = useRef(null)
   useEffect(() => {
-    fetch('https://dep-backend-ce.onrender.com/getSignImage', { method: "POST" }).then(res => res.blob()).then(blob => {
+    fetch('https://depcse.pythonanywhere.com//getSignImage', { method: "POST" }).then(res => res.blob()).then(blob => {
       const url = URL.createObjectURL(blob);
       imgRef.current.src = url
     })

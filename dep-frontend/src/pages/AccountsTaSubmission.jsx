@@ -51,7 +51,7 @@ export default function AccountsTaSubmission() {
     accountsTaData["formId"] = id;
     accountsTaData["comment"] = accountsTaComment.value;
 
-    fetch("https://dep-backend-ce.onrender.com/submitTAAccountsData", {
+    fetch("https://depcse.pythonanywhere.com//submitTAAccountsData", {
       method: "POST",
       body: JSON.stringify(accountsTaData),
       headers: {
@@ -92,7 +92,7 @@ export default function AccountsTaSubmission() {
     accountsTaData["formId"] = id;
     accountsTaData["comment"] = accountsTaComment.value;
 
-    fetch("https://dep-backend-ce.onrender.com/submitTAAccountsData", {
+    fetch("https://depcse.pythonanywhere.com//submitTAAccountsData", {
       method: "POST",
       body: JSON.stringify(accountsTaData),
       headers: {

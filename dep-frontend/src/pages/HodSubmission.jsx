@@ -26,7 +26,7 @@ export default function HodSubmission() {
     hodData["status"] = status;
     hodData["formId"] = id;
 
-    fetch("https://dep-backend-ce.onrender.com/submitHodData", {
+    fetch("https://depcse.pythonanywhere.com//submitHodData", {
       method: "POST",
       body: JSON.stringify(hodData),
       headers: {
@@ -43,7 +43,7 @@ export default function HodSubmission() {
     hodData["status"] = status;
     hodData["formId"] = id;
 
-    fetch("https://dep-backend-ce.onrender.com/submitHodData", {
+    fetch("https://depcse.pythonanywhere.com//submitHodData", {
       method: "POST",
       body: JSON.stringify(hodData),
       headers: {

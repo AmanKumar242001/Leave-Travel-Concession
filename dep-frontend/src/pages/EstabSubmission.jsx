@@ -28,7 +28,7 @@ export default function EstabSubmission() {
     estabData["formId"] = id;
 
 
-    fetch("https://dep-backend-ce.onrender.com/submitEstabData", {
+    fetch("https://depcse.pythonanywhere.com//submitEstabData", {
       method: "POST",
       body: JSON.stringify(estabData),
       headers: {
@@ -48,7 +48,7 @@ export default function EstabSubmission() {
     estabData["formId"] = id;
 
 
-    fetch("https://dep-backend-ce.onrender.com/submitEstabData", {
+    fetch("https://depcse.pythonanywhere.com//submitEstabData", {
       method: "POST",
       body: JSON.stringify(estabData),
       headers: {

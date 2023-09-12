@@ -4,7 +4,7 @@ export default function NotificationPage() {
   const [notifications, setNotifications] = useState([])
 
   useEffect(() => {
-    fetch('https://dep-backend-ce.onrender.com/getNotifications', {
+    fetch('https://depcse.pythonanywhere.com//getNotifications', {
       method: "POST"
     }).then(res => res.json()).then(setNotifications)
   }, [])

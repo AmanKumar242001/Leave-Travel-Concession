@@ -44,7 +44,7 @@ export default function ReviewTaApplication() {
   const addFile = (id) => {
     const formdata = new FormData()
     formdata.append('fileId', id)
-    fetch('https://dep-backend-ce.onrender.com/getReceipt', {
+    fetch('https://depcse.pythonanywhere.com//getReceipt', {
       method: "POST",
       body: formdata
     }).then(handleBlob)
@@ -68,7 +68,7 @@ export default function ReviewTaApplication() {
   }
 
   useEffect(() => {
-    fetch("https://dep-backend-ce.onrender.com/getTAInfo", {
+    fetch("https://depcse.pythonanywhere.com//getTAInfo", {
       method: "POST",
       body: JSON.stringify({ taId: id }),
       headers: {
@@ -92,7 +92,7 @@ export default function ReviewTaApplication() {
               <form method="POST" action="/api/createNewApplication">
   
               </form>
-              fetch('https://dep-backend-ce.onrender.com/api/createNewApplication', {
+              fetch('https://depcse.pythonanywhere.com//api/createNewApplication', {
                 method: "POST",
                 data: JSON.stringify(people)
               }).then(res => res.json()).then(json_data => handle(json_date))

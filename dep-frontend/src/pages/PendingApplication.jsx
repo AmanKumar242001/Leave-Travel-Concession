@@ -7,7 +7,7 @@ export default function PendingApplication() {
   const [pendingList, setPendingList] = useState([]);
 
   const getData = () => {
-    fetch("https://dep-backend-ce.onrender.com/listPendingLTCApplication", { method: "POST" })
+    fetch("https://depcse.pythonanywhere.com//listPendingLTCApplication", { method: "POST" })
       .then((res) => res.json())
       .then((data) => setPendingList(data));
   };

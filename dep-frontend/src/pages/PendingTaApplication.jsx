@@ -7,7 +7,7 @@ export default function PendingTaApplication() {
   const [pendingTaList, setPendingTaList] = useState([]);
 
   const getTaData = () => {
-    fetch("https://dep-backend-ce.onrender.com/listPendingTAApplication", { method: "POST" })
+    fetch("https://depcse.pythonanywhere.com//listPendingTAApplication", { method: "POST" })
       .then((res) => res.json())
       .then((data) => setPendingTaList(data));
   };

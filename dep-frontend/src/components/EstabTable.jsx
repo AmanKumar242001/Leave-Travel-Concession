@@ -10,7 +10,7 @@ export default function EstabTable() {
   const [ltcDataOld, setLtcDataOld] = useState({});
   const { id } = useParams();
   useEffect(() => {
-    fetch("https://dep-backend-ce.onrender.com/getLTCInfo", {
+    fetch("https://depcse.pythonanywhere.com//getLTCInfo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -21,7 +21,7 @@ export default function EstabTable() {
       .then(setLtcData);
 
 
-    fetch("https://dep-backend-ce.onrender.com/getOldLTCInfo", {
+    fetch("https://depcse.pythonanywhere.com//getOldLTCInfo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

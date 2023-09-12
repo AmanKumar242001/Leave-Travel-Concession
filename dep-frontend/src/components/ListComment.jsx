@@ -11,7 +11,7 @@ export default function ListComment() {
     const commentEndpoint = location.pathname.includes("Ta")
       ? "/getTAComments"
       : "/getComments";
-    fetch(`https://dep-backend-ce.onrender.com${commentEndpoint}`, {
+    fetch(`https://depcse.pythonanywhere.com/${commentEndpoint}`, {
       method: "POST",
       body: JSON.stringify({ id: id }),
       headers: {

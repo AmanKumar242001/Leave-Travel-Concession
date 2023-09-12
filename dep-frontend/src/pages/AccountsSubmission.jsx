@@ -25,7 +25,7 @@ export default function AccountsSubmission() {
   };
   console.log(fares);
   useEffect(() => {
-    fetch("https://dep-backend-ce.onrender.com/getLTCInfo", {
+    fetch("https://depcse.pythonanywhere.com//getLTCInfo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -58,7 +58,7 @@ export default function AccountsSubmission() {
     accountsData["formId"] = id;
     accountsData["fares"] = fares;
 
-    fetch("https://dep-backend-ce.onrender.com/submitAccountsData", {
+    fetch("https://depcse.pythonanywhere.com//submitAccountsData", {
       method: "POST",
       body: JSON.stringify(accountsData),
       headers: {
@@ -88,7 +88,7 @@ export default function AccountsSubmission() {
 
     accountsData;
 
-    fetch("https://dep-backend-ce.onrender.com/submitAccountsData", {
+    fetch("https://depcse.pythonanywhere.com//submitAccountsData", {
       method: "POST",
       body: JSON.stringify(accountsData),
       headers: {
