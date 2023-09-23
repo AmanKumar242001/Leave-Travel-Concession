@@ -9,6 +9,7 @@ Flask==2.2.3
 Flask-Admin==1.6.1
 Flask-Migrate==4.0.4
 Flask-Session==0.4.0
+Flask-Cors==4.0.0
 Flask-SQLAlchemy==3.0.3
 greenlet==2.0.2
 gunicorn==20.1.0
